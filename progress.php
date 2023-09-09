@@ -1,21 +1,26 @@
 <?php
 $ffmpeg_output = @file_get_contents('output.txt');
+
 if ($ffmpeg_output) {
-    preg_match("/Duration: (.*?), start:/", $ffmpeg_output, $a_match);
-    $duration_as_time = $a_match[1];
-    $time_array = array_reverse(explode(":", $duration_as_time));
-    $duration = floatval($time_array[0]);
-    if (!empty($time_array[1])) $duration += intval($time_array[1]) * 60;
-    if (!empty($time_array[2])) $duration += intval($time_array[2]) * 60 * 60;
-    preg_match_all("/time=(.*?) bitrate/", $ffmpeg_output, $a_match);
-    $raw_time = array_pop($a_match);
-    if (is_array($raw_time)) {
-        $raw_time = array_pop($raw_time);
+    preg_match_all("/time=(.*?) bitrate/", $ffmpeg_output, $matches);
+    $last_match = end($matches[1]);
+    $time_array = explode(':', $last_match);
+    
+    if (count($time_array) == 3) {
+        $encode_at_time = floatval($time_array[0]) * 3600 + floatval($time_array[1]) * 60 + floatval($time_array[2]);
+        
+        preg_match("/Duration: (.*?), start:/", $ffmpeg_output, $duration_match);
+        $duration_array = explode(':', $duration_match[1]);
+        $total_duration = floatval($duration_array[0]) * 3600 + floatval($duration_array[1]) * 60 + floatval($duration_array[2]);
+        
+        $progress = ($encode_at_time / $total_duration) * 100;
+        echo round($progress);
+    } else {
+        // Unable to parse time, progress not available
+        echo "0";
     }
-    $time_array = array_reverse(explode(":", $raw_time));
-    $encode_at_time = floatval($time_array[0]);
-    if (!empty($time_array[1])) $encode_at_time += intval($time_array[1]) * 60;
-    if (!empty($time_array[2])) $encode_at_time += intval($time_array[2]) * 60 * 60;
-    echo round(($encode_at_time / $duration) * 100);
+} else {
+    // No ffmpeg output available, progress not available
+    echo "0";
 }
 ?>
