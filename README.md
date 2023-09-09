@@ -6,11 +6,10 @@ To install the application, you can simply download the code and upload it to yo
 
 Here's what's currently functional in the application:
 1. Video upload functionality.
-2. An upload progress bar to track the file upload progress. - Working now
+2. An upload progress bar to track the file upload progress.
 3. The ability to select the output video format.
 4. Conversion of uploaded videos to the desired output format.
-
-However, there is a feature that is not working as intended, which is the FFmpeg conversion progress bar.
+5. Conversion real-time progress bar
 
 In the future, I plan to implement a feature for remote file uploads.
 
