@@ -1,76 +1,0 @@
-ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers
-  built with gcc 11 (Ubuntu 11.2.0-19ubuntu1)
-  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1 --toolchain=hardened --libdir=/usr/lib/aarch64-linux-gnu --incdir=/usr/include/aarch64-linux-gnu --arch=arm64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
-  libavutil      56. 70.100 / 56. 70.100
-  libavcodec     58.134.100 / 58.134.100
-  libavformat    58. 76.100 / 58. 76.100
-  libavdevice    58. 13.100 / 58. 13.100
-  libavfilter     7.110.100 /  7.110.100
-  libswscale      5.  9.100 /  5.  9.100
-  libswresample   3.  9.100 /  3.  9.100
-  libpostproc    55.  9.100 / 55.  9.100
-Input #0, matroska,webm, from 'uploads/sample_960x400_ocean_with_audio.mkv':
-  Metadata:
-    COMPATIBLE_BRANDS: isomavc1
-    MAJOR_BRAND     : isom
-    MINOR_VERSION   : 1
-    ENCODER         : Lavf58.45.100
-  Duration: 00:00:46.62, start: 0.000000, bitrate: 2976 kb/s
-  Stream #0:0: Video: h264 (High), yuv420p(progressive), 960x400 [SAR 1:1 DAR 12:5], 23.98 fps, 23.98 tbr, 1k tbn, 47.95 tbc (default)
-    Metadata:
-      HANDLER_NAME    : GPAC ISO Video Handler
-      ENCODER         : Lavc58.91.100 libx264
-      DURATION        : 00:00:46.550000000
-  Stream #0:1: Audio: vorbis, 48000 Hz, stereo, fltp (default)
-    Metadata:
-      HANDLER_NAME    : GPAC ISO Audio Handler
-      ENCODER         : Lavc58.91.100 libvorbis
-      DURATION        : 00:00:46.616000000
-Stream mapping:
-  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
-  Stream #0:1 -> #0:1 (vorbis (native) -> aac (native))
-Press [q] to stop, [?] for help
-[libx264 @ 0xaaaae453f5b0] -qscale is ignored, -crf is recommended.
-[libx264 @ 0xaaaae453f5b0] using SAR=1/1
-[libx264 @ 0xaaaae453f5b0] using cpu capabilities: ARMv8 NEON
-[libx264 @ 0xaaaae453f5b0] profile High, level 3.0, 4:2:0, 8-bit
-[libx264 @ 0xaaaae453f5b0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=23 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to 'output/20230909103450_e5e796a101d5464e.mp4':
-  Metadata:
-    COMPATIBLE_BRANDS: isomavc1
-    MAJOR_BRAND     : isom
-    MINOR_VERSION   : 1
-    encoder         : Lavf58.76.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(progressive), 960x400 [SAR 1:1 DAR 12:5], q=2-31, 23.98 fps, 24k tbn (default)
-    Metadata:
-      HANDLER_NAME    : GPAC ISO Video Handler
-      DURATION        : 00:00:46.550000000
-      encoder         : Lavc58.134.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      HANDLER_NAME    : GPAC ISO Audio Handler
-      DURATION        : 00:00:46.616000000
-      encoder         : Lavc58.134.100 aac
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.10 bitrate=   3.5kbits/s speed=24.5x    frame=  104 fps=0.0 q=28.0 size=       0kB time=00:00:04.41 bitrate=   0.1kbits/s speed=8.68x    frame=  160 fps=158 q=28.0 size=     256kB time=00:00:06.76 bitrate= 310.0kbits/s speed= 6.7x    frame=  204 fps=135 q=28.0 size=     512kB time=00:00:08.60 bitrate= 487.7kbits/s speed=5.69x    frame=  264 fps=131 q=28.0 size=    1024kB time=00:00:11.09 bitrate= 756.0kbits/s speed=5.52x    frame=  309 fps=123 q=28.0 size=    1536kB time=00:00:12.97 bitrate= 969.9kbits/s speed=5.15x    frame=  341 fps=113 q=28.0 size=    2048kB time=00:00:14.29 bitrate=1173.6kbits/s speed=4.73x    frame=  367 fps=104 q=28.0 size=    3072kB time=00:00:15.38 bitrate=1635.8kbits/s speed=4.36x    frame=  398 fps= 99 q=28.0 size=    3840kB time=00:00:16.68 bitrate=1885.3kbits/s speed=4.13x    frame=  434 fps= 96 q=28.0 size=    4608kB time=00:00:18.17 bitrate=2076.5kbits/s speed=   4x    frame=  472 fps= 93 q=28.0 size=    5120kB time=00:00:19.75 bitrate=2122.9kbits/s speed=3.89x    frame=  511 fps= 91 q=28.0 size=    5888kB time=00:00:21.40 bitrate=2253.9kbits/s speed=3.82x    frame=  556 fps= 91 q=28.0 size=    6656kB time=00:00:23.27 bitrate=2342.4kbits/s speed=3.81x    frame=  596 fps= 90 q=28.0 size=    7168kB time=00:00:24.94 bitrate=2354.3kbits/s speed=3.77x    frame=  622 fps= 87 q=28.0 size=    7936kB time=00:00:26.02 bitrate=2497.6kbits/s speed=3.65x    frame=  662 fps= 86 q=28.0 size=    8704kB time=00:00:27.69 bitrate=2574.7kbits/s speed=3.62x    frame=  704 fps= 86 q=28.0 size=    9472kB time=00:00:29.44 bitrate=2635.4kbits/s speed=3.61x    frame=  742 fps= 86 q=28.0 size=   10496kB time=00:00:31.04 bitrate=2769.8kbits/s speed=3.58x    frame=  773 fps= 84 q=28.0 size=   11264kB time=00:00:32.32 bitrate=2854.8kbits/s speed=3.52x    frame=  800 fps= 83 q=28.0 size=   11776kB time=00:00:33.45 bitrate=2883.7kbits/s speed=3.46x    frame=  833 fps= 82 q=28.0 size=   12544kB time=00:00:34.84 bitrate=2949.5kbits/s speed=3.42x    frame=  867 fps= 81 q=28.0 size=   12800kB time=00:00:36.24 bitrate=2892.8kbits/s speed=3.39x    frame=  913 fps= 82 q=28.0 size=   13312kB time=00:00:38.16 bitrate=2857.1kbits/s speed=3.41x    frame=  959 fps= 82 q=28.0 size=   13568kB time=00:00:40.06 bitrate=2774.1kbits/s speed=3.42x    frame= 1006 fps= 82 q=28.0 size=   13824kB time=00:00:42.02 bitrate=2694.4kbits/s speed=3.44x    frame= 1046 fps= 82 q=28.0 size=   14848kB time=00:00:43.71 bitrate=2782.5kbits/s speed=3.43x    frame= 1087 fps= 82 q=28.0 size=   15360kB time=00:00:45.42 bitrate=2770.3kbits/s speed=3.42x    frame= 1116 fps= 81 q=-1.0 Lsize=   16082kB time=00:00:46.61 bitrate=2826.1kbits/s speed= 3.4x    
-video:15350kB audio:701kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.192598%
-[libx264 @ 0xaaaae453f5b0] frame I:31    Avg QP:21.87  size: 28503
-[libx264 @ 0xaaaae453f5b0] frame P:508   Avg QP:24.15  size: 15399
-[libx264 @ 0xaaaae453f5b0] frame B:577   Avg QP:25.24  size: 12151
-[libx264 @ 0xaaaae453f5b0] consecutive B-frames: 27.9%  7.5%  6.2% 58.4%
-[libx264 @ 0xaaaae453f5b0] mb I  I16..4: 20.5% 35.8% 43.7%
-[libx264 @ 0xaaaae453f5b0] mb P  I16..4:  9.4% 23.7% 16.8%  P16..4: 21.3% 10.0%  5.3%  0.0%  0.0%    skip:13.5%
-[libx264 @ 0xaaaae453f5b0] mb B  I16..4:  2.1%  5.7% 12.3%  B16..8: 30.7% 12.5%  3.8%  direct: 5.9%  skip:27.0%  L0:48.1% L1:35.9% BI:16.0%
-[libx264 @ 0xaaaae453f5b0] 8x8 transform intra:41.0% inter:55.3%
-[libx264 @ 0xaaaae453f5b0] coded y,uvDC,uvAC intra: 62.9% 74.2% 28.7% inter: 27.0% 29.8% 0.4%
-[libx264 @ 0xaaaae453f5b0] i16 v,h,dc,p: 23% 38% 13% 27%
-[libx264 @ 0xaaaae453f5b0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 25% 26%  5%  6%  4%  8%  4%  9%
-[libx264 @ 0xaaaae453f5b0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 27% 14%  6%  8%  6% 11%  5% 10%
-[libx264 @ 0xaaaae453f5b0] i8c dc,h,v,p: 51% 28% 14%  7%
-[libx264 @ 0xaaaae453f5b0] Weighted P-Frames: Y:10.0% UV:8.7%
-[libx264 @ 0xaaaae453f5b0] ref P L0: 70.6% 16.1%  9.1%  4.1%  0.2%
-[libx264 @ 0xaaaae453f5b0] ref B L0: 93.9%  4.8%  1.3%
-[libx264 @ 0xaaaae453f5b0] ref B L1: 97.9%  2.1%
-[libx264 @ 0xaaaae453f5b0] kb/s:2701.40
-[aac @ 0xaaaae4647d60] Qavg: 3122.231
