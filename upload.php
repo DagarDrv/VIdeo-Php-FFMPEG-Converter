@@ -1,6 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["video"])) {
     $uploadDir = "uploads/";
+    if (!file_exists($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
 
     // Get the original file name and sanitize it
     $originalFileName = $_FILES["video"]["name"];

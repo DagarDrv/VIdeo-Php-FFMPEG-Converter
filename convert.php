@@ -20,14 +20,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["videoPath"])) {
     // Define the output file path with the specified directory
     $outputFile = $outputDirectory . $uniqueFilename;
     
+    // Create an empty output.txt file
+    touch("output.txt");
+    
     // Perform the conversion using FFmpeg
     $ffmpegCommand = "ffmpeg -i $videoPath -q:v $outputQuality $outputFile 1> output.txt 2>&1";
 
     exec($ffmpegCommand, $output, $returnCode);
+    echo '<html>';
+    echo '<head>';
+    echo '<link rel="stylesheet" type="text/css" href="style.css">';
+    echo '</head>';
+    echo '<body>';
     if ($returnCode === 0) {
         echo "<p>Conversion completed successfully. <a href=\"$outputFile\" download>Download Converted Video</a></p>";
     } else {
         echo "<p>Conversion failed. Please try again.</p>";
     }
+    // Delete the output.txt file
+    unlink("output.txt");
+    echo '</body>';
+    echo '</html>';
+
 }
 ?>
