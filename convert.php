@@ -32,6 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["videoPath"])) {
     echo '<link rel="stylesheet" type="text/css" href="style.css">';
     echo '</head>';
     echo '<body>';
+    echo '<h1>Video Upload and Conversion</h1>';
+    echo '<div id="content">';
+
     if ($returnCode === 0) {
         echo "<p>Conversion completed successfully. <a href=\"$outputFile\" download>Download Converted Video</a></p>";
     } else {
