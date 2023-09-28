@@ -30,13 +30,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["videoPath"])) {
     echo '<html>';
     echo '<head>';
     echo '<link rel="stylesheet" type="text/css" href="style.css">';
+    echo '<style>';
+    echo '.centered-button { text-align: center; }';
+    echo '</style>';
     echo '</head>';
     echo '<body>';
     echo '<h1>Video Upload and Conversion</h1>';
-    echo '<div id="content">';
-
     if ($returnCode === 0) {
         echo "<p>Conversion completed successfully. <a href=\"$outputFile\" download>Download Converted Video</a></p>";
+        
+        // Add a centered button to convert another file
+        echo '<div class="centered-button">';
+        echo '<p><a href="index.html"><button>Convert Another File</button></a></p>';
+        echo '</div>';
     } else {
         echo "<p>Conversion failed. Please try again.</p>";
     }
@@ -44,6 +50,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["videoPath"])) {
     unlink("output.txt");
     echo '</body>';
     echo '</html>';
-
 }
 ?>
